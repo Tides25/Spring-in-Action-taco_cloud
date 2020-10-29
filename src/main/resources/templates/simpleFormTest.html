@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taco-Cloud</title>
+</head>
+<body>
+    <img th:src="@{static/images/TacoCloud.png}"/>
+
+    <form method="POST" th:object="${input}">
+        <label for="input">Input whatever: </label>
+        <input type="text" th:field="*{input}"/>
+        <span class="validationError"
+                th:if="${#fields.hasErrors('input')}"
+                th:errors="*{input}">Input something to display</span>
+        <br/>
+        <input type="submit" value="clickToSubmit">
+    </form>
+</body>
+</html>
